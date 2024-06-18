@@ -1,0 +1,75 @@
+.
+├── app
+│   ├── account
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations
+│   │   │   └── __init__.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── stream
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations
+│   │   │   └── __init__.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── donation
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations
+│   │   │   └── __init__.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   └── comment
+│       ├── __init__.py
+│       ├── admin.py
+│       ├── apps.py
+│       ├── migrations
+│       │   └── __init__.py
+│       ├── models.py
+│       ├── serializers.py
+│       ├── tests.py
+│       ├── urls.py
+│       └── views.py
+├── base
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── project_structure.txt
+└── venv
+    ├── bin
+    │   ├── Activate.ps1
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── django-admin
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.10
+    │   ├── python -> /usr/bin/python
+    │   ├── python3 -> python
+    │   ├── python3.10 -> python
+    │   └── sqlformat
+    ├── include
+    ├── lib
+    │   └── python3.10
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+12 directories, 32 files
