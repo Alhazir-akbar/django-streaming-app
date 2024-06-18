@@ -95,6 +95,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'base.urls'
+AUTH_USER_MODEL = 'account.CustomUser'
 
 TEMPLATES = [
     {

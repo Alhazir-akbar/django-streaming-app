@@ -3,10 +3,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from app.stream.models import Stream
+from django.conf import settings
 
 class Donation(models.Model):
     stream = models.ForeignKey(Stream, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) 
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     payment_method = models.CharField(max_length=50, choices=[('gateway', 'Gateway'), ('manual', 'Manual')])
     payment_status = models.CharField(max_length=50, choices=[('pending', 'Pending'), ('completed', 'Completed'), ('failed', 'Failed')])
