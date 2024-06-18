@@ -1,0 +1,92 @@
+Model: LogEntry
+Fields:
+  - id (AutoField)
+  - action_time (DateTimeField)
+  - user (ForeignKey to CustomUser)
+  - content_type (ForeignKey to ContentType)
+  - object_id (TextField)
+  - object_repr (CharField)
+  - action_flag (PositiveSmallIntegerField)
+  - change_message (TextField)
+
+Model: Permission
+Fields:
+  - group (ManyToManyField)
+  - user (ManyToManyField)
+  - id (AutoField)
+  - name (CharField)
+  - content_type (ForeignKey to ContentType)
+  - codename (CharField)
+
+Model: Group
+Fields:
+  - user (ManyToManyField)
+  - id (AutoField)
+  - name (CharField)
+  - permissions (ManyToManyField with Permission)
+
+Model: ContentType
+Fields:
+  - logentry (ForeignKey)
+  - permission (ForeignKey)
+  - id (AutoField)
+  - app_label (CharField)
+  - model (CharField)
+
+Model: Session
+Fields:
+  - session_key (CharField)
+  - session_data (TextField)
+  - expire_date (DateTimeField)
+
+Model: CustomUser
+Fields:
+  - logentry (ForeignKey)
+  - stream (ForeignKey)
+  - donation (ForeignKey)
+  - comment (ForeignKey)
+  - id (BigAutoField)
+  - password (CharField)
+  - last_login (DateTimeField)
+  - is_superuser (BooleanField)
+  - username (CharField)
+  - first_name (CharField)
+  - last_name (CharField)
+  - email (CharField)
+  - is_staff (BooleanField)
+  - is_active (BooleanField)
+  - date_joined (DateTimeField)
+  - groups (ManyToManyField with Group)
+  - user_permissions (ManyToManyField with Permission)
+
+Model: Stream
+Fields:
+  - donation (ForeignKey)
+  - comment (ForeignKey)
+  - id (BigAutoField)
+  - user (ForeignKey to CustomUser)
+  - title (CharField)
+  - description (TextField)
+  - status (CharField)
+  - created_at (DateTimeField)
+  - updated_at (DateTimeField)
+
+Model: Donation
+Fields:
+  - id (BigAutoField)
+  - stream (ForeignKey to Stream)
+  - user (ForeignKey to CustomUser)
+  - amount (DecimalField)
+  - payment_method (CharField)
+  - payment_status (CharField)
+  - created_at (DateTimeField)
+  - updated_at (DateTimeField)
+
+Model: Comment
+Fields:
+  - id (BigAutoField)
+  - stream (ForeignKey to Stream)
+  - user (ForeignKey to CustomUser)
+  - content (TextField)
+  - created_at (DateTimeField)
+  - updated_at (DateTimeField)
